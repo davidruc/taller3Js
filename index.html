@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+
+    <fieldset>
+      <legend>Datos de la sede</legend>
+      <form id="myFormularioCampus">
+        <input type="text" name="nombreSede" placeholder="nombre de la sede" /><br><br>
+        <input type="submit" value="guardar">
+      </form>
+    </fieldset>
+    <fieldset>
+        <legend>Datos de los campers Campus</legend><br>
+        <form id="myFormularioPersonas">
+          <select name="sede"></select>
+          <input type="text" name="nombre" placeholder="Ingrese el nombre del camper" /><br><br>
+          <input type="text" name="numero" placeholder="Ingrese el teléfono"><br><br>
+          <input type="text" name="correo" placeholder="Ingrese el correo"><br><br>
+          En qué horario estás
+          <input type="radio" name="horario" value="mañana" > <label for="mañana">Mañana</label>
+          <input type="radio" name="horario" value="tarde" > <label for="tarde">tarde</label><br><br>
+          A qué salón perteneces 
+          <input type="radio" name="salon" value="apolo" > <label for="apolo">apolo</label>
+          <input type="radio" name="salon" value="artemis" > <label for="artemis">artemis</label>
+          <input type="radio" name="salon" value="sputnik" > <label for="sputnik">sputnik</label><br><br>
+          <input type="submit" value="guardar">
+        </form>
+    </fieldset>
+  </body>
+</html>
