@@ -25,15 +25,63 @@
       </form>
     </fieldset>
 
-
-
     <fieldset>
-        <legend>Datos personales campers</legend><br>
-    
-        <form id="myFormularioPersonas">
+      <legend>Team</legend>
+      <form id="infoTrainer">
+        <select name="sede"></select>
+       
+        <select name="teamsTrainers" id="">
+          <option value="null">seleccione el team en el que dicta clases</option>
+          <option name="teamsT" value="Team trainer 1">Team 1</option>
+          <option name="teamsT" value="Team trainer 2">Team 2</option>
+          <option name="teamsT" value="Team trainer 3">Team 3</option>
+          <option name="teamsT" value="Team trainer 4">Team 4</option>
+        </select><br><br>
+       
+        <input type="submit" value="guardar">
+
+      </form>
+    </fieldset>
+ 
+    <fieldset>
+      <legend>Informacion Trainer</legend>
+      <form id="infoTrainer">
+        <select name="sede"></select>
+        <select name="teams"></select>
+        <input type="text" name="nombreTrainer" placeholder="Ingrese el nombre. " /><br><br>
+        <select name="salonTrainer">
+          <option value="sputnikT">sputnik</option>
+          <option value="artemisT">artemis</option>
+          <option value="apoloT">apolo</option>
+        </select>
+        <input type="submit" value="guardar">
+
+      </form>
+    </fieldset>
+    <fieldset>
+      <legend>Nivel del camper</legend>
+      <form id="nivelCamper">
+        <select name="sede"></select>
+        
+      Cual es su team
+      <select name="teams"></select>
+      cual es su Trainer
+      <select name="nombreT"></select>
+      A qué salón pertenece
+      <select name="salonT"></select>
+          <br><br>
+          Cual es su nivel actual
+          <select name="nivel">
+            <option value="Principiante">Principiante</option>
+            <option value="Junior">Junior</option>
+            <option value="Senior">Senior</option>
+          </select><br><br>
           
           
-          <select name="sede"></select>
+          <input type="text" name="prerrequisito" placeholder="Prerrequisitos"><br><br>
+          <input type="text" name="tecnologias" placeholder="Tecnologias a las que pertenece"><br>
+          <input type="radio" name="requisito" value="electiva" > <label for="electiva">electiva</label>
+          <input type="radio" name="requisito" value="obligatoria" > <label for="obligatoria">obligatoria</label><br><br>
           <input type="text" name="nombre" placeholder="Ingrese el nombre. " /><br><br>
           <input type="text" name="numero" placeholder="Ingrese el teléfono"><br><br>
           <input type="text" name="correo" placeholder="Ingrese el correo"><br><br>
@@ -44,42 +92,21 @@
           <input type="radio" name="transporte" value="bus"><label for="bus">bus</label>
           <input type="radio" name="transporte" value="carro"><label for="carro">carro</label>
           <input type="radio" name="transporte" value="otro"><label for="otro">otro</label><br><br>
-          
-          <form id="infoCampers">
-            Cual es su team
-            <select name="team">
-              <option name="teams" value="Team 1">Team 1</option>
-              <option name="teams" value="Team 2">Team 2</option>
-              <option name="teams" value="Team 3">Team 3</option>
-              <option name="teams" value="Team 4">Team 4</option>
-            </select><br><br>
-            Cual es su nivel actual
-            <select name="nivel">
-              <option value="Principiante">Principiante</option>
-              <option value="Junior">Junior</option>
-              <option value="Senior">Senior</option>
-            </select><br><br>
-            A qué salón pertenece
-            <input type="radio" name="salon" value="apolo" > <label for="apolo">apolo</label>
-            <input type="radio" name="salon" value="artemis" > <label for="artemis">artemis</label>
-            <input type="radio" name="salon" value="sputnik" > <label for="sputnik">sputnik</label><br><br>
-            <input type="text" name="prerrequisito" placeholder="Prerrequisitos"><br><br>
-            <input type="text" name="tecnologias" placeholder="Tecnologias a las que pertenece"><br>
-            <input type="radio" name="requisito" value="electiva" > <label for="electiva">electiva</label>
-            <input type="radio" name="requisito" value="obligatoria" > <label for="obligatoria">obligatoria</label><br><br>
-      
-          
+
+        
+        
+        <input type="submit" value="guardar">
+      </form>
+    </fieldset>
+   <!--  <fieldset>
+        <legend>Datos personales del camper</legend><br>
+    
+        <form id="myFormularioPersonas">
+          <select name="sede"></select>
           
           <input type="submit" value="guardar">
         </form>
+    </fieldset> -->
 
-    </fieldset>
-
-    <fieldset>
-      <legend>Información de trainers</legend><br>
-      
-      <input type="submit" value="guardar">
-    </form>
-    </fieldset>
   </body>
 </html>
