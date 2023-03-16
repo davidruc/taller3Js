@@ -17,28 +17,69 @@
           <option name="nombreSede" value="Bucaramanga">Bucaramanga</option>
           <option name="nombreSede" value="Medellin">Medellin</option>
           <option name="nombreSede" value="Bogota">Bogota</option>
-          
-        </select>
+        </select><br><br>
+        <input type="text" name="direccionSede" placeholder="Ingrese la dirección de la sede"><br><br>
+        <input type="text" name="numeroSede" placeholder="Ingrese el número de la sede"><br><br>
         <!-- <input type="text" name="nombreSede" placeholder="nombre de la sede" /><br><br> -->
         <input type="submit" value="guardar">
       </form>
     </fieldset>
+
+
+
     <fieldset>
-        <legend>Datos de los campers Campus</legend><br>
+        <legend>Datos personales campers</legend><br>
+    
         <form id="myFormularioPersonas">
+          
+          
           <select name="sede"></select>
-          <input type="text" name="nombre" placeholder="Ingrese el nombre del camper" /><br><br>
+          <input type="text" name="nombre" placeholder="Ingrese el nombre. " /><br><br>
           <input type="text" name="numero" placeholder="Ingrese el teléfono"><br><br>
           <input type="text" name="correo" placeholder="Ingrese el correo"><br><br>
-          En qué horario estás
-          <input type="radio" name="horario" value="mañana" > <label for="mañana">Mañana</label>
-          <input type="radio" name="horario" value="tarde" > <label for="tarde">tarde</label><br><br>
-          A qué salón perteneces 
-          <input type="radio" name="salon" value="apolo" > <label for="apolo">apolo</label>
-          <input type="radio" name="salon" value="artemis" > <label for="artemis">artemis</label>
-          <input type="radio" name="salon" value="sputnik" > <label for="sputnik">sputnik</label><br><br>
+          
+          <input type="text" name="barrio" placeholder="Ingrese el barrio donde vive"><br><br>
+          ¿Cúal es su medio de transporte? <br>
+          <input type="radio" name="transporte" value="moto"><label for="moto">Moto</label>
+          <input type="radio" name="transporte" value="bus"><label for="bus">bus</label>
+          <input type="radio" name="transporte" value="carro"><label for="carro">carro</label>
+          <input type="radio" name="transporte" value="otro"><label for="otro">otro</label><br><br>
+          
+          <form id="infoCampers">
+            Cual es su team
+            <select name="team">
+              <option name="teams" value="Team 1">Team 1</option>
+              <option name="teams" value="Team 2">Team 2</option>
+              <option name="teams" value="Team 3">Team 3</option>
+              <option name="teams" value="Team 4">Team 4</option>
+            </select><br><br>
+            Cual es su nivel actual
+            <select name="nivel">
+              <option value="Principiante">Principiante</option>
+              <option value="Junior">Junior</option>
+              <option value="Senior">Senior</option>
+            </select><br><br>
+            A qué salón pertenece
+            <input type="radio" name="salon" value="apolo" > <label for="apolo">apolo</label>
+            <input type="radio" name="salon" value="artemis" > <label for="artemis">artemis</label>
+            <input type="radio" name="salon" value="sputnik" > <label for="sputnik">sputnik</label><br><br>
+            <input type="text" name="prerrequisito" placeholder="Prerrequisitos"><br><br>
+            <input type="text" name="tecnologias" placeholder="Tecnologias a las que pertenece"><br>
+            <input type="radio" name="requisito" value="electiva" > <label for="electiva">electiva</label>
+            <input type="radio" name="requisito" value="obligatoria" > <label for="obligatoria">obligatoria</label><br><br>
+      
+          
+          
           <input type="submit" value="guardar">
         </form>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Información de trainers</legend><br>
+      
+      <input type="submit" value="guardar">
+    </form>
     </fieldset>
   </body>
 </html>
