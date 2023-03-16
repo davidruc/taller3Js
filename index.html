@@ -13,6 +13,7 @@
       <legend>Datos de la sede</legend>
       <form id="formularioSede">
         <select name="ciudad">
+          <option name="nombreSede" value="null">Ingrese la sede</option>
           <option name="nombreSede" value="Mexico">Mexico</option>
           <option name="nombreSede" value="Bucaramanga">Bucaramanga</option>
           <option name="nombreSede" value="Medellin">Medellin</option>
@@ -45,8 +46,8 @@
  
     <fieldset>
       <legend>Informacion Trainer</legend>
-      <form id="infoTrainer">
-        <select name="sede"></select>
+      <form id="Trainer">
+        <select name="sedeT"></select>
         <select name="teams"></select>
         <input type="text" name="nombreTrainer" placeholder="Ingrese el nombre. " /><br><br>
         <select name="salonTrainer">
@@ -61,13 +62,9 @@
     <fieldset>
       <legend>Nivel del camper</legend>
       <form id="nivelCamper">
-        <select name="sede"></select>
-        
-      Cual es su team
-      <select name="teams"></select>
-      cual es su Trainer
+      <select name="sedeC"></select>
+      <select name="teamsC"></select>
       <select name="nombreT"></select>
-      A qué salón pertenece
       <select name="salonT"></select>
           <br><br>
           Cual es su nivel actual
