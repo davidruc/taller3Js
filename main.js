@@ -30,16 +30,16 @@ infoTrainer.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     delete data.sede;
-    console.log('entro',data); 
-    data.trainersss = [];
-    data.campersss = [];
+    
+    
     listaTeams("[name='teamsTrainers']","[name='teams']");
     listaTeams("[name='teamsTrainers']","[name='teamsC']")
     campus.sede.forEach((item)=>{
-        
-        item.teams.unshift(data.teamsTrainers);
+        item.teams.unshift({
+            [data.teamsTrainers]:[data.trainerrr  , data.camperrr ]
+        });
     });
-    console.log('salio',campus);
+    
     infoTrainer.reset();
 });
 
@@ -48,17 +48,27 @@ trainer.addEventListener("submit", (e)=>{
     let data = Object.fromEntries(new FormData(e.target));
     delete data.sedeT;
     delete data.teams;
+    let trainerrr = data.nombreTrainer;
     console.log("data trainer", data);
-    
     campus.sede.forEach((item)=>{
-        item.teams.forEach((event)=>{
-            event.trainersss.unshift(data)
-        })
+
+        item.teams.forEach((eventos)=>{
+            
+            console.log("esto es eventos", eventos);
+        }) 
+        
     })
+    console.log('salio',campus);
+
+    
+
     listaTrainers();
     infoTrainer.reset();
     
 })
+
+
+
 
 let listaSedes = (p1,p2)=>{
     let sedeSeleccionada = document.querySelector(p1).value;
@@ -77,8 +87,6 @@ let listaTrainers = ()=>{
     let trainerrr = document.querySelector("[name='nombreT']");
     let salonSeleccionado = document.querySelector("[name='salonTrainer']").value;
     let salonnn = document.querySelector("[name='salonT']")
-    console.log(salonSeleccionado);
-    console.log(salonnn);
     trainerrr.innerHTML = null;
     salonnn.innerHTML = null;
     trainerrr.insertAdjacentHTML("beforeend", `<option value="${trainerSeleccionado}">${trainerSeleccionado}<option/>"`)
