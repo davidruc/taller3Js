@@ -14,6 +14,7 @@ let nivelCamper = document.querySelector(`#nivelCamper`);
 let infoTrainer = document.querySelector(`#infoTrainer`);
 let trainer = document.querySelector(`#Trainer`);
 
+
 formularioSede.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
@@ -31,12 +32,11 @@ infoTrainer.addEventListener("submit", (e)=>{
     let data = Object.fromEntries(new FormData(e.target));
     delete data.sede;
     
-    
     listaTeams("[name='teamsTrainers']","[name='teams']");
     listaTeams("[name='teamsTrainers']","[name='teamsC']")
     campus.sede.forEach((item)=>{
         item.teams.unshift({
-            [data.teamsTrainers]:[data.trainerrr  , data.camperrr ]
+            [data.teamsTrainers]:[]
         });
     });
     
@@ -45,28 +45,51 @@ infoTrainer.addEventListener("submit", (e)=>{
 
 trainer.addEventListener("submit", (e)=>{
     e.preventDefault();  
+    listaTrainers();
     let data = Object.fromEntries(new FormData(e.target));
     delete data.sedeT;
-    delete data.teams;
-    let trainerrr = data.nombreTrainer;
-    console.log("data trainer", data);
+    
+   /*  console.log(data); */
+    /* delete data.teams; */
+/*     let trainerrr = data.nombreTrainer; */
     campus.sede.forEach((item)=>{
-
         item.teams.forEach((eventos)=>{
             
-            console.log("esto es eventos", eventos);
+            eventos[data.teams].unshift({
+                [data.nombreTrainer]: []
+            });
+            eventos[data.teams].unshift(data);
+
         }) 
-        
     })
-    console.log('salio',campus);
-
-    
-
-    listaTrainers();
-    infoTrainer.reset();
-    
+  
+    trainer.reset();  
 })
 
+
+nivelCamper.addEventListener("submit", (e)=>{
+    e.preventDefault();  
+    let data = Object.fromEntries(new FormData(e.target));
+    delete data.sedeC;
+
+    /* console.log("data camper", data); */
+    campus.sede.forEach((item)=>{
+        item.teams.forEach((eventos)=>{
+       /*      eventos[data.teamsC].unshift(data) */
+            eventos[data.teamsC].forEach((paso)=>{
+
+                console.log(paso/* [eventos.nombreTrainer] */);
+               /*  paso.nombreTrainer.unshift(data) */
+              /*   paso[eventos.nombreTrainer].unshift(data) */
+             
+            })
+        
+        }) 
+    });
+    listaTrainers();
+    console.log(campus);
+    nivelCamper.reset();
+})
 
 
 
