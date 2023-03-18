@@ -22,14 +22,14 @@ formularioSede.addEventListener("submit", (e)=>{
 infoTrainer.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    delete data.sede;
-    
     listaTeams("[name='teamsTrainers']","[name='teams']");
     listaTeams("[name='teamsTrainers']","[name='teamsC']")
     campus.sede.forEach((item)=>{
-        item.teams.unshift({
-            [data.teamsTrainers]:[]
-        });
+       if(item.ciudad == data.sede){                
+                item.teams.unshift({
+                    [data.teamsTrainers]:[]
+                });
+        }
     });
     
     infoTrainer.reset();
@@ -39,15 +39,15 @@ trainer.addEventListener("submit", (e)=>{
     e.preventDefault();  
     listaTrainers();
     let data = Object.fromEntries(new FormData(e.target));
-    delete data.sedeT;
-    campus.sede.forEach((item)=>{
-        
+    campus.sede.forEach((item)=>{    
         item.teams.forEach((eventos)=>{
-            if (item.teams[0] == eventos){
-                eventos[data.teams].unshift({
-                   data, grupoDelTrainer: []    
-            });
-        }
+            if (item.ciudad == data.sedeT){
+                if (item.teams[0] == eventos){
+                    eventos[data.teams].unshift({
+                       data, grupoDelTrainer: []    
+                });
+            }
+            }
         }); 
     });
   
@@ -59,18 +59,23 @@ nivelCamper.addEventListener("submit", (e)=>{
     let data = Object.fromEntries(new FormData(e.target));
     delete data.sedeC;
     campus.sede.forEach((item)=>{
-        item.teams.forEach((eventos)=>{
-            if (item.teams[0] == eventos){
-                eventos[data.teamsC].forEach((paso)=>{
-                    let salonConfirmacion1 = paso.data.salonTrainer;
-                    let salonConfirmacion2 = data.salonT;
-                    if (salonConfirmacion1 == salonConfirmacion2){
-                        paso.grupoDelTrainer.unshift(data);
-                    }; 
-                });
-            }           
-        }) 
-      
+        
+        item.teams.forEach((eventos)=>{ 
+            if (eventos[data.teamsC] != undefined){
+                if (item.teams[0] == eventos){
+                    eventos[data.teamsC].forEach((paso)=>{
+                        let salonConfirmacion1 = paso.data.salonTrainer;
+                        let salonConfirmacion2 = data.salonT;
+                        let trainerConfirmacion1 = paso.data.nombreTrainer ;
+                        let trainerConfirmacion2 = data.nombreT ;
+                        if (salonConfirmacion1 == salonConfirmacion2 && trainerConfirmacion1 == trainerConfirmacion2){
+                            paso.grupoDelTrainer.unshift(data);
+                        }; 
+                    });
+                }           
+        }
+    })
+       
     });
     console.log("Objeto campus: ",campus);
     nivelCamper.reset();
