@@ -1,0 +1,12 @@
+fieldset{
+    width: 500px;
+}
+fieldset .interno{
+    width: 460px;
+}
+.contAll{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+}

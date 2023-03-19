@@ -1,109 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="main.js" defer></script>
-  </head>
-  <body>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="contAll">
+    <div class="fieldsets">
     <fieldset>
-      <legend>Datos de la sede</legend>
-      <form id="formularioSede">
-        <select name="ciudad">
-          <option name="nombreSede" value="null">Ingrese la sede</option>
-          <option name="nombreSede" value="Mexico">Mexico</option>
-          <option name="nombreSede" value="Bucaramanga">Bucaramanga</option>
-          <option name="nombreSede" value="Medellin">Medellin</option>
-          <option name="nombreSede" value="Bogota">Bogota</option>
-        </select><br><br>
-        <input type="text" name="direccionSede" placeholder="Ingrese la dirección de la sede"><br><br>
-        <input type="text" name="numeroSede" placeholder="Ingrese el número de la sede"><br><br>
-        <!-- <input type="text" name="nombreSede" placeholder="nombre de la sede" /><br><br> -->
-        <input type="submit" value="guardar">
-      </form>
+      
+        <legend>Datos de la sede</legend>
+        <form id="formularioSede">
+          <select name="ciudad">
+            <option name="nombreSede" value="null">Ingrese la sede</option>
+            <option name="nombreSede" value="Mexico">Mexico</option>
+            <option name="nombreSede" value="Bucaramanga">Bucaramanga</option>
+            <option name="nombreSede" value="Medellin">Medellin</option>
+            <option name="nombreSede" value="Bogota">Bogota</option>
+          </select><br><br>
+          <input type="text" name="direccionSede" placeholder="Ingrese la dirección de la sede"><br><br>
+          <input type="text" name="numeroSede" placeholder="Ingrese el número de la sede"><br><br>
+          <!-- <input type="text" name="nombreSede" placeholder="nombre de la sede" /><br><br> -->
+          <input type="submit" value="guardar">
+        </form>
     </fieldset>
+    </div>
+  
+  
+  
 
+    <div class="fieldsets">
     <fieldset>
-      <legend>Team</legend>
+      
+      <legend>Team en el que se guardaran datos</legend>
       <form id="infoTrainer">
         <select name="sede"></select>
-       
+
         <select name="teamsTrainers" id="">
           <option value="null">seleccione el team en el que dicta clases</option>
-          <option name="teamsT" value="Team 1">Team 1</option>
-          <option name="teamsT" value="Team 2">Team 2</option>
-          <option name="teamsT" value="Team 3">Team 3</option>
-          <option name="teamsT" value="Team 4">Team 4</option>
+          <option name="teamsT" value="Team1">Team 1</option>
+          <option name="teamsT" value="Team2">Team 2</option>
+          <option name="teamsT" value="Team3">Team 3</option>
+          <option name="teamsT" value="Team4">Team 4</option>
         </select><br><br>
-       
+
         <input type="submit" value="guardar">
 
       </form>
+    
     </fieldset>
- 
+    </div>
+  
+  
+    <div class="fieldsets">
     <fieldset>
       <legend>Informacion Trainer</legend>
       <form id="Trainer">
         <select name="sedeT"></select>
         <select name="teams"></select>
         <input type="text" name="nombreTrainer" placeholder="Ingrese el nombre. " /><br><br>
+        <input type="text" name="telefonoTrainer" placeholder="Ingrese el teléfono. " /><br><br>
+        <input type="text" name="emailTrainer" placeholder="Ingrese el correo. " /><br><br>
         <select name="salonTrainer">
+          <option value="null">seleccione el salon</option>
           <option value="sputnikT">sputnik</option>
           <option value="artemisT">artemis</option>
           <option value="apoloT">apolo</option>
+          <option value="ser">ser</option>
+          <option value="inglés">inglés</option>
+
+        </select>
+        <select name="tipoDeAsignatura">
+          <option value="virtual">virtual</option>
+          <option value="prescencial">prescencial</option>
         </select>
         <input type="submit" value="guardar">
 
       </form>
+    
     </fieldset>
+    </div>
+  
+ 
+    <div class="fieldsets">
     <fieldset>
-      <legend>Nivel del camper</legend>
+      
+      <legend>Información del camper</legend>
       <form id="nivelCamper">
-      <select name="sedeC"></select>
-      <select name="teamsC"></select>
-      <select name="nombreT"></select>
-      <select name="salonT"></select>
-          <br><br>
-          Cual es su nivel actual
-          <select name="nivel">
-            <option value="Principiante">Principiante</option>
-            <option value="Junior">Junior</option>
-            <option value="Senior">Senior</option>
-          </select><br><br>
-          
-          
-          <input type="text" name="prerrequisito" placeholder="Prerrequisitos"><br><br>
-          <input type="text" name="tecnologias" placeholder="Tecnologias a las que pertenece"><br>
-          <input type="radio" name="requisito" value="electiva" > <label for="electiva">electiva</label>
-          <input type="radio" name="requisito" value="obligatoria" > <label for="obligatoria">obligatoria</label><br><br>
-          <input type="text" name="nombre" placeholder="Ingrese el nombre. " /><br><br>
-          <input type="text" name="numero" placeholder="Ingrese el teléfono"><br><br>
-          <input type="text" name="correo" placeholder="Ingrese el correo"><br><br>
-          
+        <select name="sedeC"></select>
+        <select name="teamsC"></select>
+        <select name="nombreT"></select>
+        <select name="salonT"></select>
+        <br><br>
+
+
+        <fieldset class="interno">
+          <legend>Datos personales camper</legend>
+          <input type="text" name="nombre" placeholder="Ingrese el nombre del camper. " /><br><br>
+          <input type="text" name="numero" placeholder="Ingrese el teléfono del camper"><br><br>
+          <input type="text" name="correo" placeholder="Ingrese el correo del camper"><br><br>
           <input type="text" name="barrio" placeholder="Ingrese el barrio donde vive"><br><br>
           ¿Cúal es su medio de transporte? <br>
           <input type="radio" name="transporte" value="moto"><label for="moto">Moto</label>
           <input type="radio" name="transporte" value="bus"><label for="bus">bus</label>
           <input type="radio" name="transporte" value="carro"><label for="carro">carro</label>
           <input type="radio" name="transporte" value="otro"><label for="otro">otro</label><br><br>
+        </fieldset><br><br>
+        <fieldset class="interno">
+          <legend>Nivel del camper</legend>
 
-        
-        
+          <select name="nivel">
+
+            <option value="Principiante">Principiante</option>
+            <option value="Junior">Junior</option>
+            <option value="Senior">Senior</option>
+          </select><br><br>
+
+          <input type="number" name="numeroDeCreditos" placeholder="# de créditos del roadmap"><br><br>
+          <input type="text" name="prerrequisito" placeholder="Prerrequisito para el nivel"><br><br>
+          <input type="text" name="tecnologias" placeholder="Tecnologias del prerrequisito"><br>
+          <input type="radio" name="requisito" value="electiva"> <label for="electiva">electiva</label>
+          <input type="radio" name="requisito" value="obligatoria"> <label for="obligatoria">obligatoria</label><br><br>
+          ¿Tiene sandbox?
+          <input type="radio" name="sandbox" value="Con Sandbox"><label for="ConSandbox">Si</label>
+          <input type="radio" name="sandbox" value="sin Sandbox"><label for="sinSandbox">No</label>
+        </fieldset>
+
+
+
         <input type="submit" value="guardar">
       </form>
+   
     </fieldset>
-   <!--  <fieldset>
-        <legend>Datos personales del camper</legend><br>
-    
-        <form id="myFormularioPersonas">
-          <select name="sede"></select>
-          
-          <input type="submit" value="guardar">
-        </form>
-    </fieldset> -->
+    </div>
+  
 
-  </body>
+  </div>
+</body>
+
 </html>
